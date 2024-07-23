@@ -1,0 +1,5 @@
+repo: a61af66fc99eb5ec9d50c05b0c599757b1289ceb
+node: 0f9dfa12cff0d55ba6011248d7cc6478c60e5883
+branch: zulu7.9
+latesttag: zulu7u79-b15
+latesttagdistance: 2

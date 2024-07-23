@@ -1,0 +1,11 @@
+../../../../../src/share/classes/com/sun/tools/attach/AgentInitializationException.java
+../../../../../src/share/classes/com/sun/tools/attach/AgentLoadException.java
+../../../../../src/share/classes/com/sun/tools/attach/AttachNotSupportedException.java
+../../../../../src/share/classes/com/sun/tools/attach/AttachPermission.java
+../../../../../src/share/classes/com/sun/tools/attach/VirtualMachine.java
+../../../../../src/share/classes/com/sun/tools/attach/VirtualMachineDescriptor.java
+../../../../../src/share/classes/com/sun/tools/attach/spi/AttachProvider.java
+../../../../../src/share/classes/sun/tools/attach/HotSpotAttachProvider.java
+../../../../../src/share/classes/sun/tools/attach/HotSpotVirtualMachine.java
+../../../../../src/solaris/classes/sun/tools/attach/BsdAttachProvider.java
+../../../../../src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
