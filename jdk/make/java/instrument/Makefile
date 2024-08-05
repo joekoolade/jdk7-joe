@@ -135,7 +135,7 @@ endif
 #
 # Library to compile.
 #
-#include $(BUILDDIR)/common/Library.gmk
+include $(BUILDDIR)/common/Library.gmk
 
 # We don't want to link against -ljava
 JAVALIB=
