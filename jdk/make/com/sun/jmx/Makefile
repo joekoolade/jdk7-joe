@@ -105,7 +105,7 @@ FILES_ties   = $(subst javax/management/remote/rmi/,javax/management/remote/rmi/
 # launch tool not built at this stage but we can invoke via rmi class.
 
 #RMIC_JAVA = $(OUTPUTDIR)/bin/java
-RMIC_JAVA = /Library/Java/JavaVirtualMachines/zulu-7.jdk/Contents/Home/bin/java
+RMIC_JAVA = java
 # need to treat 64bit solaris differently
 ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
 RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java

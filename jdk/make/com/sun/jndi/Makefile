@@ -31,6 +31,7 @@ BUILDDIR = ../../..
 include $(BUILDDIR)/common/Defs.gmk
 
 SUBDIRS = toolkit cosnaming ldap rmi dns
+#SUBDIRS = toolkit cosnaming rmi dns
 include $(BUILDDIR)/common/Subdirs.gmk
 
 all build clean clobber::
