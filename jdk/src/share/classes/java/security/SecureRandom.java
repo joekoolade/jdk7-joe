@@ -184,15 +184,17 @@ public class SecureRandom extends java.util.Random {
     }
 
     private void getDefaultPRNG(boolean setSeed, byte[] seed) {
-        String prng = getPrngAlgorithm();
+        String prng = null; // getPrngAlgorithm();
+//        System.out.println("Default PRNG "+prng);
         if (prng == null) {
             // bummer, get the SUN implementation
             prng = "SHA1PRNG";
-            this.secureRandomSpi = new sun.security.provider.SecureRandom();
             this.provider = Providers.getSunProvider();
+            this.secureRandomSpi = new sun.security.provider.SecureRandom();
             if (setSeed) {
                 this.secureRandomSpi.engineSetSeed(seed);
             }
+//            System.out.println("Got SUN SHA1PRNG");
         } else {
             try {
                 SecureRandom random = SecureRandom.getInstance(prng);

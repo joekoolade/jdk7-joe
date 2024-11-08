@@ -91,8 +91,8 @@ public final class SunJCE extends Provider {
     /* Are we debugging? -- for developers */
     static final boolean debug = false;
 
-    static final SecureRandom RANDOM = new SecureRandom();
-
+//    static final SecureRandom RANDOM = new SecureRandom();
+    static final SecureRandom RANDOM = null;
     public SunJCE() {
         /* We are the "SunJCE" provider */
         super("SunJCE", 1.7d, info);

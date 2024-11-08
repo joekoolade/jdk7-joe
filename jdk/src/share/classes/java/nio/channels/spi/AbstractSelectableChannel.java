@@ -90,7 +90,6 @@ public abstract class AbstractSelectableChannel
     // -- Utility methods for the key set --
 
     private void addKey(SelectionKey k) {
-        assert Thread.holdsLock(keyLock);
         int i = 0;
         if ((keys != null) && (keyCount < keys.length)) {
             // Find empty element of key array

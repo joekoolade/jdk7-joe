@@ -99,23 +99,23 @@ final class ProviderConfig {
     // avoid if not available (pre Solaris 10) to reduce startup time
     // or if disabled via system property
     private void checkSunPKCS11Solaris() {
-        Boolean o = AccessController.doPrivileged(
-                                new PrivilegedAction<Boolean>() {
-            public Boolean run() {
-                File file = new File("/usr/lib/libpkcs11.so");
-                if (file.exists() == false) {
-                    return Boolean.FALSE;
-                }
-                if ("false".equalsIgnoreCase(System.getProperty
-                        ("sun.security.pkcs11.enable-solaris"))) {
-                    return Boolean.FALSE;
-                }
-                return Boolean.TRUE;
-            }
-        });
-        if (o == Boolean.FALSE) {
-            tries = MAX_LOAD_TRIES;
-        }
+//        Boolean o = AccessController.doPrivileged(
+//                                new PrivilegedAction<Boolean>() {
+//            public Boolean run() {
+//                File file = new File("/usr/lib/libpkcs11.so");
+//                if (file.exists() == false) {
+//                    return Boolean.FALSE;
+//                }
+//                if ("false".equalsIgnoreCase(System.getProperty
+//                        ("sun.security.pkcs11.enable-solaris"))) {
+//                    return Boolean.FALSE;
+//                }
+//                return Boolean.TRUE;
+//            }
+//        });
+//        if (o == Boolean.FALSE) {
+//            tries = MAX_LOAD_TRIES;
+//        }
     }
 
     private boolean hasArgument() {

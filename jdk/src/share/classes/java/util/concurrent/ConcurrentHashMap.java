@@ -37,6 +37,7 @@ package java.util.concurrent;
 import java.util.concurrent.locks.*;
 import java.util.*;
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -1599,8 +1600,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V>
             SBASE = UNSAFE.arrayBaseOffset(sc);
             ts = UNSAFE.arrayIndexScale(tc);
             ss = UNSAFE.arrayIndexScale(sc);
-            HASHSEED_OFFSET = UNSAFE.objectFieldOffset(
-                ConcurrentHashMap.class.getDeclaredField("hashSeed"));
+            Field field = ConcurrentHashMap.class.getDeclaredField("hashSeed");
+            HASHSEED_OFFSET = UNSAFE.objectFieldOffset(field);
             SEGSHIFT_OFFSET = UNSAFE.objectFieldOffset(
                 ConcurrentHashMap.class.getDeclaredField("segmentShift"));
             SEGMASK_OFFSET = UNSAFE.objectFieldOffset(
@@ -1608,6 +1609,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V>
             SEGMENTS_OFFSET = UNSAFE.objectFieldOffset(
                 ConcurrentHashMap.class.getDeclaredField("segments"));
         } catch (Exception e) {
+            e.printStackTrace();
             throw new Error(e);
         }
         if ((ss & (ss-1)) != 0 || (ts & (ts-1)) != 0)

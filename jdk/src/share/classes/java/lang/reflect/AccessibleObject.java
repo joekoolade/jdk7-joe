@@ -168,9 +168,9 @@ public class AccessibleObject implements AnnotatedElement {
     // Reflection factory used by subclasses for creating field,
     // method, and constructor accessors. Note that this is called
     // very early in the bootstrapping process.
-    static final ReflectionFactory reflectionFactory =
-        AccessController.doPrivileged(
-            new sun.reflect.ReflectionFactory.GetReflectionFactoryAction());
+    static final ReflectionFactory reflectionFactory = sun.reflect.ReflectionFactory.getReflectionFactory();
+//        AccessController.doPrivileged(
+//            new sun.reflect.ReflectionFactory.GetReflectionFactoryAction());
 
     /**
      * @throws NullPointerException {@inheritDoc}

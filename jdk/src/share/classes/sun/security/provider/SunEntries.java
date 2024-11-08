@@ -83,18 +83,18 @@ final class SunEntries {
         // register the native PRNG, if available
         // if user selected /dev/urandom, we put it before SHA1PRNG,
         // otherwise after it
-        boolean nativeAvailable = NativePRNG.isAvailable();
-        boolean useUrandom = seedSource.equals(URL_DEV_URANDOM);
-        if (nativeAvailable && useUrandom) {
-            map.put("SecureRandom.NativePRNG",
-                "sun.security.provider.NativePRNG");
-        }
+//        boolean nativeAvailable = NativePRNG.isAvailable();
+//        boolean useUrandom = seedSource.equals(URL_DEV_URANDOM);
+//        if (nativeAvailable && useUrandom) {
+//            map.put("SecureRandom.NativePRNG",
+//                "sun.security.provider.NativePRNG");
+//        }
         map.put("SecureRandom.SHA1PRNG",
              "sun.security.provider.SecureRandom");
-        if (nativeAvailable && !useUrandom) {
-            map.put("SecureRandom.NativePRNG",
-                "sun.security.provider.NativePRNG");
-        }
+//        if (nativeAvailable && !useUrandom) {
+//            map.put("SecureRandom.NativePRNG",
+//                "sun.security.provider.NativePRNG");
+//        }
 
         /*
          * Signature engines

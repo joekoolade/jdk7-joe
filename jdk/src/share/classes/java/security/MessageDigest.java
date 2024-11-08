@@ -156,6 +156,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     public static MessageDigest getInstance(String algorithm)
     throws NoSuchAlgorithmException {
         try {
+//            System.out.println("MD alg "+algorithm);
             Object[] objs = Security.getImpl(algorithm, "MessageDigest",
                                              (String)null);
             if (objs[0] instanceof MessageDigest) {

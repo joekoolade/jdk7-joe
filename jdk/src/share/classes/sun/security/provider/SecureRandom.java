@@ -105,6 +105,8 @@ implements java.io.Serializable {
             try {
                 digest = MessageDigest.getInstance("SHA");
             } catch (NoSuchAlgorithmException exc) {
+                System.out.println("securerandom "+ exc.getMessage());
+                exc.printStackTrace();
                 throw new InternalError(
                     "internal error: SHA-1 not available.");
             }
